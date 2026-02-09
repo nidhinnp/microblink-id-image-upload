@@ -29,6 +29,14 @@ A Laravel package for uploading ID/document images to the Microblink API. This i
 composer require nidhinnp/microblink-id-image-upload
 ```
 
+If you get **"Could not find a version matching your minimum-stability (stable)"**, the package may not have a stable tag yet. Use:
+
+```bash
+composer require nidhinnp/microblink-id-image-upload:@dev
+```
+
+Or pin the branch: `nidhinnp/microblink-id-image-upload:dev-main`
+
 ### Local Development
 
 For local development, add the package to your `composer.json`:

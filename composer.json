@@ -1,5 +1,6 @@
 {
     "name": "nidhinnp/microblink-id-image-upload",
+    "version": "1.0.0",
     "description": "Laravel package for uploading ID/document images to Microblink API",
     "keywords": [
         "laravel",
@@ -12,8 +13,8 @@
     "license": "MIT",
     "authors": [
         {
-            "name": "Your Name",
-            "email": "your-email@example.com"
+            "name": "Nidhinnp",
+            "email": "0143nidhinnp@gmail.com"
         }
     ],
     "require": {
