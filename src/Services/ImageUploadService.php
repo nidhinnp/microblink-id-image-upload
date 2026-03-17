@@ -632,6 +632,16 @@ class ImageUploadService
                     . (strlen($errorMessage) > 0 && $errorMessage !== 'Empty or non-JSON response body' ? " API response: {$errorMessage}" : ''),
                     $statusCode
                 );
+            case 415:
+                $hint = 'Unsupported Media Type: the API did not accept the request format. '
+                    . 'For file uploads the request must be multipart/form-data with the image part; '
+                    . 'for base64 use JSON with Content-Type: application/json. '
+                    . 'Ensure the endpoint URL matches the request type (e.g. recognizers/blinkid or recognizers/passport).';
+                throw new ApiException(
+                    "Microblink API returned 415 Unsupported Media Type. {$hint}"
+                    . (strlen($errorMessage) > 0 && $errorMessage !== 'Empty or non-JSON response body' ? " API response: {$errorMessage}" : ''),
+                    $statusCode
+                );
             case 429:
                 throw new ApiException("Rate limit exceeded: {$errorMessage}", $statusCode);
             case 500:
